@@ -2,21 +2,19 @@
  <div class="jumbotron">
   <div class="container">
   <h1 class="display-3">Hello, <% if current_user.nil? %> world! <% else %> <%= current_user.name %> <% end %></h1>
+  <% if current_user.nil? %>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <% else %>
+   <p class="lead">Hello <%= current_user.name %>! It's about time you signed up! Lets create some events.</p>
+  <% end %>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
    <% if current_user.nil? %>
     <%= link_to "Login", login_path, class: "btn btn-primary btn-lg" %>
     <%= link_to "Sign Up", new_user_path, class: "btn btn-primary btn-lg" %>
    <% else %>
     <%= link_to "My Profile", user_path(current_user.id), class: "btn btn-primary btn-lg" %>
-   <% end %>
-   <% if current_user.nil? %>
-    <span>Guest</span>
-   <% else %>
-    <%= current_user.name %>
+    <%= link_to "Create Event", new_event_path, class: "btn btn-primary btn-lg" %>
    <% end %>
   </p>
   </div>

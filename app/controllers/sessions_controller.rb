@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   if user 
    session[:user_id] = user.id
    flash[:info] = "Sign in successful"
-   redirect_to root_path
+   redirect_to user_path
   else 
    flash[:info] = "Something went wrong"
    redirect_to root_path
