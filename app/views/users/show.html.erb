@@ -2,7 +2,7 @@
  <h2><%= @user.name %>'s Events</h2><br><br>
 </div>
 
-<button class="btn btn-primary" type="submit">Create Event</button>
+<%= link_to 'Create Event', new_event_path, class: 'btn btn-primary' %>
 <br /><br />
 
 <% @user.events.each do |f| %>
@@ -11,6 +11,7 @@
   <div class="card-block">
     <h4 class="card-title"><%= f.title %></h4>
     <p class="card-text"><%= f.description %></p>
+    <%= link_to 'Go to event', event_path %>
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
   </div>
