@@ -19,7 +19,7 @@
        <a href="#"><%= current_user.name %></a>
        <div class="uk-navbar-dropdown" uk-dropdown="mode: hover; pos: bottom-justify">
          <ul class="uk-nav uk-navbar-dropdown-nav">
-          <li class="uk-active"><a href="#">My Profile</a></li>
+          <li class="uk-active"><%= link_to "My Profile", user_path(current_user.id) %></li>
           <li><a href="#">Item</a></li>
           <li><a href="#">Item</a></li>
           <li><%= link_to "Logout", logout_path,  method: "delete" %></li>
